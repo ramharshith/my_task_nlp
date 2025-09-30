@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinner Party RSVP 🍽️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: #333;
+    }
+    .form-container {
+      background: #fff;
+      padding: 35px 40px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .form-container h2 {
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: #e67e22;
+    }
+    .form-container p {
+      margin-bottom: 25px;
+      color: #555;
+      font-size: 16px;
+    }
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: bold;
+      text-align: left;
+      color: #444;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #e67e22;
+      box-shadow: 0 0 6px rgba(230, 126, 34, 0.4);
+    }
+    input[type="submit"] {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: transform 0.2s ease, background 0.3s;
+    }
+    input[type="submit"]:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #d35400, #e67e22);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>🎉 Dinner Party RSVP 🎉</h2>
+    <p>We’re so excited to have you over! Please pick your favorites 🍽️</p>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+      <input type="hidden" name="oid" value="00DWU0000094jpR">
+      <input type="hidden" name="retURL" value="https://www.salesforce.com/in/form/conf/thank-you/">
+
+
+      <!-- Guest Info -->
+      <label for="first_name">👤 First Name</label>
+      <input id="first_name" name="first_name" type="text" maxlength="40" required placeholder="Enter your first name">
+
+      <label for="last_name">👤 Last Name</label>
+      <input id="last_name" name="last_name" type="text" maxlength="80" required placeholder="Enter your last name">
+
+      <label for="email">📧 Email</label>
+      <input id="email" name="email" type="email" maxlength="80" required placeholder="your@email.com">
+
+      <!-- Soup -->
+      <label for="00NWU00001D7JAn">🥣 Soup Choice</label>
+      <select id="00NWU00001D7JAn" name="00NWU00001D7JAn" required>
+        <option value="">-- Select Your Soup --</option>
+        <option value="Cream of Broccoli">Cream of Broccoli</option>
+        <option value="Cream of Mushroom">Cream of Mushroom</option>
+        <option value="Manchow Veg">Manchow Veg</option>
+        <option value="None of the Above">Skip Soup</option>
+      </select>
+
+      <!-- Appetizer -->
+      <label for="00NWU00001D7JM5">🥗 Appetizer Choice</label>
+      <select id="00NWU00001D7JM5" name="00NWU00001D7JM5" required>
+        <option value="">-- Select Your Appetizer --</option>
+        <option value="Garlic Bread">Garlic Bread</option>
+        <option value="Loaded Nachos">Loaded Nachos</option>
+        <option value="Potato Chips">Potato Chips</option>
+      </select>
+
+      <!-- Main Course -->
+      <label for="00NWU00001D7JFd">🍝 Main Course Type</label>
+      <select id="00NWU00001D7JFd" name="00NWU00001D7JFd" required>
+        <option value="">-- Veg or Non-Veg? --</option>
+        <option value="Veg">Veg</option>
+        <option value="Non-Veg">Non-Veg</option>
+      </select>
+
+      <label for="00NWU00001D7J9B">🍕 Main Course Choice</label>
+      <select id="00NWU00001D7J9B" name="00NWU00001D7J9B" required>
+        <option value="">-- First choose type above --</option>
+      </select>
+
+      <!-- Dessert -->
+      <label for="00NWU00001D7JCP">🍨 Dessert Choice (Optional)</label>
+      <select id="00NWU00001D7JCP" name="00NWU00001D7JCP">
+        <option value="">-- Optional: End on a sweet note --</option>
+        <option value="Vanilla Ice Cream">Vanilla Ice Cream</option>
+        <option value="ChocoChips Ice Cream">ChocoChips Ice Cream</option>
+        <option value="Butterscotch Ice Cream">Butterscotch Ice Cream</option>
+        <option value="BlackCurrant Ice Cream">BlackCurrant Ice Cream</option>
+        <option value="Tiramisu">Tiramisu</option>
+      </select>
+
+
+      <!-- Notes -->
+      <label for="00NWU00001D7JE1">📝 Special Notes</label>
+      <textarea id="00NWU00001D7JE1" name="00NWU00001D7JE1" placeholder="Any drink preferences, allergies, or extra wishes?" rows="3" required></textarea>
+
+      <input type="submit" value="🎉 Submit My RSVP 🎉">
+    </form>
+  </div>
+
+  <script>
+    const mainCourseType = document.getElementById("00NWU00001D7JFd");
+    const mainCourseChoice = document.getElementById("00NWU00001D7J9B");
+
+    const options = {
+      "Veg": [
+        "Pasta Arrabiata (Veg)",
+        "Pasta Alfredo (Veg)",
+        "Pizza – Corn, Onion, Capsicum"
+      ],
+      "Non-Veg": [
+        "Pasta Arrabiata (Non-Veg)",
+        "Pasta Alfredo (Non-Veg)",
+        "Pizza – Chicken"
+      ]
+    };
+
+    mainCourseType.addEventListener("change", function() {
+      const selected = this.value;
+      mainCourseChoice.innerHTML = '<option value="">-- Select Your Dish --</option>';
+      if (options[selected]) {
+        options[selected].forEach(opt => {
+          const o = document.createElement("option");
+          o.value = opt;
+          o.text = opt;
+          mainCourseChoice.appendChild(o);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
